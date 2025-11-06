@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Context-Aware Vocabulary",
+  "version": "1.0",
+  "description": "Explain highlighted text using AI.",
+  "permissions": [
+    "contextMenus"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
