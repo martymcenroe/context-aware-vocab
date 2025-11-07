@@ -1,18 +1,24 @@
-// This runs when Chrome first installs (or updates) the extension
+// 1. Create the menu item when installed
 chrome.runtime.onInstalled.addListener(() => {
-  // Create the right-click menu item
   chrome.contextMenus.create({
     id: "explain-with-ai",
     title: "Explain with AI",
-    contexts: ["selection"], // Only show when text is selected
+    contexts: ["selection"],
   });
 });
 
-// This runs when the user clicks our menu item
+// 2. Listen for the click
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === "explain-with-ai") {
-    // For now, just log it to prove it worked
-    console.log("User clicked 'Explain with AI'");
-    console.log("Selected text:", info.selectionText);
+    // --- CAPTURE PHASE ---
+    const dataToAnalyze = {
+        word: info.selectionText,
+        url: info.pageUrl,
+        title: tab.title // We get this for free from the 'tab' object
+    };
+
+    // --- LOGGING PHASE (Proving it worked) ---
+    console.log(" [CAV-2] Capture Success! payload prepared:");
+    console.log(dataToAnalyze);
   }
 });
