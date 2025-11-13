@@ -37,8 +37,7 @@ This project is built on a decoupled, serverless architecture.
         * Writes the request and response to **DynamoDB**.
         * Returns a JSON response to the browser.
 
-![Architecture Diagram](httpsDELETETHIS://via.placeholder.com/800x400.png?text=API+Gateway+->+Lambda+->+DynamoDB/Bedrock)
-*(Note: You can create and upload a real diagram here later)*
+[Architecture Diagram] TBD
 
 ## Technology Stack
 
